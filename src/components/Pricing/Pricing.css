@@ -1,0 +1,306 @@
+.pricing-section {
+  padding: 100px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.pricing-header .section-subtitle { margin: 0 auto 28px; }
+
+/* Toggle */
+.pricing-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+.toggle-active { color: var(--text); font-weight: 600; }
+
+.toggle-switch {
+  width: 48px;
+  height: 26px;
+  background: var(--surface-2);
+  border-radius: 13px;
+  border: 1px solid var(--glass-border);
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.toggle-switch.on { background: linear-gradient(135deg, var(--primary), var(--secondary)); }
+
+.toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  display: block;
+}
+
+.toggle-switch.on .toggle-thumb { transform: translateX(22px); }
+
+.save-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  background: rgba(16,185,129,0.15);
+  color: #34D399;
+  border: 1px solid rgba(16,185,129,0.3);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.pricing-card {
+  padding: 32px;
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.pricing-popular {
+  border-color: rgba(124,58,237,0.4) !important;
+  box-shadow: 0 0 40px rgba(124,58,237,0.12), 0 20px 50px rgba(124,58,237,0.08) !important;
+  transform: scale(1.03);
+  z-index: 2;
+}
+
+.pricing-popular:hover { transform: scale(1.03) translateY(-4px); }
+
+.popular-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 6px;
+  background: linear-gradient(135deg, rgba(124,58,237,0.4), rgba(37,99,235,0.3));
+  font-size: 12px;
+  font-weight: 700;
+  color: #C4B5FD;
+  border-bottom: 1px solid rgba(124,58,237,0.2);
+}
+
+.popular-glow {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  opacity: 0.07;
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.plan-header {
+  margin-bottom: 24px;
+  padding-top: 16px;
+}
+
+.popular-badge + .plan-header { padding-top: 24px; }
+
+.plan-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.plan-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Price */
+.plan-price {
+  margin-bottom: 24px;
+  min-height: 72px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.price-currency {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+.price-amount {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+}
+
+.price-period {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-top: 12px;
+  margin-left: 2px;
+}
+
+.price-yearly-note {
+  width: 100%;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.price-custom {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), var(--primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* CTA */
+.plan-cta {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  transition: var(--transition-fast);
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.plan-cta-primary {
+  color: white;
+  box-shadow: 0 4px 20px rgba(37,99,235,0.3);
+}
+
+.plan-cta-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.plan-cta-outline {
+  background: transparent;
+  border: 1px solid;
+}
+
+.plan-cta-outline:hover {
+  background: rgba(var(--plan-color), 0.08);
+  transform: translateY(-1px);
+}
+
+/* Features */
+.plan-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plan-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.feat-missing {
+  color: var(--text-muted);
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.feat-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.plan-feature:not(.feat-missing) .feat-icon {
+  background: rgba(var(--plan-color), 0.12);
+}
+
+.feat-missing .feat-icon {
+  background: rgba(255,255,255,0.04);
+  color: var(--text-muted) !important;
+}
+
+/* ROI Banner */
+.roi-banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 36px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(16,185,129,0.06)) !important;
+  border-color: rgba(16,185,129,0.2) !important;
+}
+
+.roi-icon { font-size: 40px; }
+
+.roi-banner h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.roi-banner p {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.roi-banner .btn-primary { margin-left: auto; white-space: nowrap; flex-shrink: 0; }
+
+@media (max-width: 1000px) {
+  .pricing-section { padding: 60px 24px; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto 40px; }
+  .pricing-popular { transform: none; }
+  .pricing-popular:hover { transform: translateY(-4px); }
+}
+
+@media (max-width: 600px) {
+  .roi-banner { flex-direction: column; text-align: center; }
+  .roi-banner .btn-primary { margin-left: 0; width: 100%; justify-content: center; }
+}

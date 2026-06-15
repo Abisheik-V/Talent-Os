@@ -1,0 +1,163 @@
+.metrics-section {
+  padding: 60px;
+  position: relative;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-secondary) 50%, var(--bg) 100%);
+}
+
+.metrics-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 40px 0;
+}
+
+.metrics-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.metric-card {
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(37,99,235,0.12), 0 0 30px rgba(37,99,235,0.08);
+  border-color: rgba(37,99,235,0.25);
+}
+
+.metric-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(37,99,235,0.06);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.metric-icon-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  opacity: 0.1;
+  filter: blur(10px);
+}
+
+.metric-body {
+  flex: 1;
+}
+
+.metric-value {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.metric-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.metric-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.metric-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  opacity: 0.4;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+/* Center visual */
+.metrics-visual {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(37,99,235,0.2);
+  animation: pulseRing 3s ease-in-out infinite;
+}
+
+.pulse-ring::before, .pulse-ring::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(37,99,235,0.15);
+}
+
+.pulse-ring::before { inset: -20px; animation: pulseRing 3s ease-in-out infinite 0.5s; }
+.pulse-ring::after { inset: -40px; animation: pulseRing 3s ease-in-out infinite 1s; }
+
+@keyframes pulseRing {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.metrics-center-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(37,99,235,0.2);
+  box-shadow: var(--shadow-md);
+}
+
+.center-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (max-width: 900px) {
+  .metrics-section { padding: 40px 24px; }
+  .metrics-inner { flex-direction: column; }
+  .metrics-visual { display: none; }
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .metrics-grid { grid-template-columns: 1fr; }
+}
