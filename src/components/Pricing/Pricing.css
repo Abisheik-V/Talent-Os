@@ -1,5 +1,5 @@
 .pricing-section {
-  padding: 100px 60px;
+  padding: clamp(48px, 8vw, 100px) clamp(16px, 5vw, 60px);
   position: relative;
   overflow: hidden;
 }
@@ -294,7 +294,6 @@
 .roi-banner .btn-primary { margin-left: auto; white-space: nowrap; flex-shrink: 0; }
 
 @media (max-width: 1000px) {
-  .pricing-section { padding: 60px 24px; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto 40px; }
   .pricing-popular { transform: none; }
   .pricing-popular:hover { transform: translateY(-4px); }
@@ -303,4 +302,12 @@
 @media (max-width: 600px) {
   .roi-banner { flex-direction: column; text-align: center; }
   .roi-banner .btn-primary { margin-left: 0; width: 100%; justify-content: center; }
+  .pricing-grid { max-width: 100%; }
+  .pricing-card { padding: 24px; }
+  .price-amount { font-size: 40px; }
+}
+
+@media (max-width: 400px) {
+  .pricing-card { padding: 18px; }
+  .pricing-toggle { flex-wrap: wrap; justify-content: center; gap: 8px; }
 }

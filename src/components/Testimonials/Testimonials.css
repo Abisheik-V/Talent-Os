@@ -1,5 +1,5 @@
 .testimonials-section {
-  padding: 100px 60px;
+  padding: clamp(48px, 8vw, 100px) clamp(16px, 5vw, 60px);
   position: relative;
   background: linear-gradient(180deg, var(--bg) 0%, var(--bg-secondary) 50%, var(--bg) 100%);
 }
@@ -160,12 +160,23 @@
 .testi-dot.active { width: 24px; border-radius: 4px; }
 
 @media (max-width: 900px) {
-  .testimonials-section { padding: 60px 24px; }
   .testi-card { padding: 28px 24px; }
   .testi-nav { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .testi-card { padding: 20px 18px; }
+  .testi-quote { font-size: 16px; }
+  .testi-nav { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 500px) {
   .testi-nav { grid-template-columns: repeat(2, 1fr); }
   .testi-quote { font-size: 16px; }
+  .testi-quote-icon { font-size: 52px; }
+}
+
+@media (max-width: 380px) {
+  .testi-nav { grid-template-columns: 1fr 1fr; }
+  .testi-footer { flex-wrap: wrap; }
 }

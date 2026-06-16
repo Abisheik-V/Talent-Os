@@ -1,5 +1,5 @@
 .ai-section {
-  padding: 100px 60px;
+  padding: clamp(48px, 8vw, 100px) clamp(16px, 5vw, 60px);
   position: relative;
   overflow: hidden;
 }
@@ -207,11 +207,21 @@
 }
 
 @media (max-width: 1000px) {
-  .ai-section { padding: 60px 24px; }
   .ai-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .ai-card { padding: 24px; }
+  .ai-stat-val { font-size: 22px; }
+  .ai-card-title { font-size: 18px; }
 }
 
 @media (max-width: 600px) {
   .ai-cta-inner { flex-direction: column; }
   .ai-cta-inner .btn-primary { margin-left: 0; width: 100%; justify-content: center; }
+}
+
+@media (max-width: 400px) {
+  .ai-card { padding: 18px; }
+  .ai-cta-inner { padding: 20px; }
 }

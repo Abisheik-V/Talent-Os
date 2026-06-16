@@ -1,5 +1,5 @@
 .metrics-section {
-  padding: 60px;
+  padding: clamp(32px, 5vw, 60px) clamp(16px, 5vw, 60px);
   position: relative;
   background: linear-gradient(180deg, var(--bg) 0%, var(--bg-secondary) 50%, var(--bg) 100%);
 }
@@ -152,10 +152,15 @@
 }
 
 @media (max-width: 900px) {
-  .metrics-section { padding: 40px 24px; }
-  .metrics-inner { flex-direction: column; }
+  .metrics-inner { flex-direction: column; gap: 32px; }
   .metrics-visual { display: none; }
   .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .metrics-grid { grid-template-columns: 1fr; }
+  .metric-card { padding: 18px 16px; }
+  .metric-value { font-size: 24px; }
 }
 
 @media (max-width: 480px) {

@@ -1,5 +1,5 @@
 .why-section {
-  padding: 100px 60px;
+  padding: clamp(48px, 8vw, 100px) clamp(16px, 5vw, 60px);
   position: relative;
   overflow: hidden;
   background: linear-gradient(180deg, var(--bg) 0%, var(--bg-secondary) 50%, var(--bg) 100%);
@@ -246,7 +246,6 @@
 }
 
 @media (max-width: 1000px) {
-  .why-section { padding: 60px 24px; }
   .comparison-grid { grid-template-columns: 1fr; gap: 20px; }
   .comparison-divider { padding-top: 0; transform: rotate(90deg); }
   .why-stats { grid-template-columns: repeat(2, 1fr); }
@@ -254,4 +253,13 @@
 
 @media (max-width: 600px) {
   .why-stats { grid-template-columns: 1fr 1fr; }
+  .panel-header { padding: 20px 16px 14px; }
+  .panel-items { padding: 12px 14px; }
+  .panel-footer { padding: 14px 16px; }
+  .why-stat { padding: 16px; }
+  .why-stat-val { font-size: 26px; }
+}
+
+@media (max-width: 400px) {
+  .why-stats { grid-template-columns: 1fr; }
 }

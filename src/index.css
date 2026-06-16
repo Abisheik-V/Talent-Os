@@ -48,7 +48,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: clamp(14px, 1.1vw, 16px);
 }
 
 body {
@@ -191,7 +191,7 @@ section { position: relative; }
 }
 
 .section-subtitle {
-  font-size: 18px;
+  font-size: clamp(15px, 2vw, 18px);
   color: var(--text-secondary);
   max-width: 600px;
   line-height: 1.7;
@@ -272,9 +272,9 @@ section { position: relative; }
   animation: float 8s ease-in-out infinite;
 }
 
-.orb-1 { width: 600px; height: 600px; background: var(--primary); top: -200px; left: -200px; animation-delay: 0s; }
-.orb-2 { width: 500px; height: 500px; background: var(--secondary); top: 200px; right: -150px; animation-delay: 2s; }
-.orb-3 { width: 400px; height: 400px; background: var(--accent); bottom: -100px; left: 30%; animation-delay: 4s; }
+.orb-1 { width: clamp(200px, 50vw, 600px); height: clamp(200px, 50vw, 600px); background: var(--primary); top: -100px; left: -100px; animation-delay: 0s; }
+.orb-2 { width: clamp(160px, 40vw, 500px); height: clamp(160px, 40vw, 500px); background: var(--secondary); top: 200px; right: -80px; animation-delay: 2s; }
+.orb-3 { width: clamp(120px, 30vw, 400px); height: clamp(120px, 30vw, 400px); background: var(--accent); bottom: -60px; left: 30%; animation-delay: 4s; }
 
 @keyframes float {
   0%, 100% { transform: translate(0, 0) scale(1); }
@@ -365,9 +365,21 @@ section { position: relative; }
 /* Responsive */
 @media (max-width: 1024px) {
   .main-content {
-    margin-left: 0;
+    margin-left: 0 !important;
   }
   :root { --sidebar-width: 0px; }
+}
+
+@media (max-width: 480px) {
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .section-badge {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

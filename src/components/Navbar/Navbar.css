@@ -269,11 +269,32 @@
   .sidebar-overlay { display: block; }
   .sidebar {
     transform: translateX(-100%);
-    width: 260px !important;
+    width: min(280px, 85vw) !important;
+    box-shadow: 4px 0 40px rgba(15, 23, 42, 0.15);
   }
   .sidebar.mobile-open {
     transform: translateX(0);
   }
+  /* Collapse button hidden on mobile */
+  .collapse-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-menu-btn {
+    top: 12px;
+    left: 12px;
+    padding: 6px 8px;
+  }
+  .sidebar-logo {
+    padding: 16px 12px;
+    min-height: 60px;
+  }
+  .logo-text { font-size: 16px; }
+  .nav-item { padding: 8px 10px; font-size: 13px; }
+  .sidebar-cta { font-size: 12px; padding: 8px 10px; }
+  .auth-link, .auth-btn { font-size: 12px; padding: 7px; }
 }
 
 /* Collapsed sidebar adjustments */
